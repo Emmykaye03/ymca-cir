@@ -1,0 +1,86 @@
+nav {
+    display: inline-block;
+    position: fixed;
+    z-index: 999;
+    right: 0;
+    ul {
+        position: absolute;
+        right: -340px;
+        background-color: $purple;
+        list-style: none;
+        margin: 0;
+        padding: 40px 0;
+        padding-right: 30px;
+        max-width: 340px;
+        transition: all .2s ease-in-out;
+        z-index: 998;
+        &.is-active {
+            right: 0;
+        }
+        li {
+            margin: 0;
+            padding: 0;
+            a {
+                color: white;
+                transition: all .2s ease-in-out;
+                text-transform: uppercase;
+                font-family: 'CachetStd-Book';
+                font-weight: lighter;
+                font-size: 22px;
+                letter-spacing: 2px;
+                padding-left: 60px;
+                padding-right: 60px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                display: block;
+                white-space: nowrap;
+                &:hover {
+                    color: $orange;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+button {
+    &:focus {
+        outline: 0;
+    }
+    position: absolute;
+    right: 0;
+    z-index: 999;
+	background-color: $purple !important;
+	opacity: .8;
+	&:hover {
+		opacity: 1 !important;
+	}
+    .hamburger-inner, .hamburger-inner:before, .hamburger-inner:after {
+        background: white;
+    }
+}
+
+
+@keyframes FadeIn {
+	0% {
+		opacity: 0;
+        left: 120px;
+	}
+	100% {
+		opacity: 1;
+        left: 0;
+	}
+}
+
+.is-active a {
+	animation: FadeIn .1s linear;
+	animation-fill-mode: both;
+    position: relative;
+}
+
+.is-active li:nth-child(1) a { animation-delay: .1s }
+.is-active li:nth-child(2) a { animation-delay: .2s }
+.is-active li:nth-child(3) a { animation-delay: .3s }
+.is-active li:nth-child(4) a { animation-delay: .4s }
+.is-active li:nth-child(5) a { animation-delay: .5s }
+.is-active li:nth-child(6) a { animation-delay: .6s }
